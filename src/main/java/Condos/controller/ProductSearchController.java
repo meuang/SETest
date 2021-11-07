@@ -48,6 +48,7 @@ public class ProductSearchController implements Initializable {
 
     private Product selectedProduct;
     private Product productDetail;
+    private Product product;
 
 
     @FXML
@@ -90,7 +91,7 @@ public class ProductSearchController implements Initializable {
         editQuantityButton.setDisable(true);
         addProduct_Button.setDisable(false);
         clear_Button.setDisable(false);
-        addProduct_Button.setDisable(true);
+        addProduct_Button.setDisable(false);
         updateTable();
         handleUpload.setDisable(false);
 
@@ -111,12 +112,10 @@ public class ProductSearchController implements Initializable {
         System.out.println(selectedProduct.getId_P());
 
         idPro_Field.setText(selectedProduct.getId_P());
-//
         namePro_Field.setText(selectedProduct.getName_P());
-
         pricePro_Field.setText(String.format("%.2f", selectedProduct.getPrice_P()));
         quantityPro_Field.setText(String.format("%d", selectedProduct.getQuantity_P()));
-//        editQuantity_Field.setText(String.format("%d", selectedProduct.getQuantity_P()));
+
         for (Product p : apiService.getP()){
             File brandingFile = new File("image/"+selectedProduct.getImage_P());
             Image brandingImage = new Image(brandingFile.toURI().toString());
@@ -124,50 +123,16 @@ public class ProductSearchController implements Initializable {
         }
 
 
-//        imagePro_Text.setText(selectedProduct.getImage_P());
-//        imageView.setImage(new Image(getClass().getResource(selectedProduct.getImage_P()).toExternalForm()));
-//        DatabaseConnection connectionNow = new DatabaseConnection();
-//        Connection connectionDB = connectionNow.getConnection();
-//
-//        String connectQuery = "SELECT * FROM microchipapp.product";
-//
-//        try {
-//            Statement statement = connectionDB.createStatement();
-//            ResultSet queryOutPut = statement.executeQuery(connectQuery);
-//            while (queryOutPut.next()){
-//                File brandingFile = new File("image/"+selectedProduct.getImage_P());
-//                Image brandingImage = new Image(brandingFile.toURI().toString());
-//                imageView.setImage(brandingImage);
-//            }
-//        } catch (Exception e){
-//            e.printStackTrace();
-//        }
 
 
 
     }
-//
+
     public void updateTable(){
         handleUpload.setDisable(true);
         ObservableList<Product> productObservableList = FXCollections.observableArrayList();
         productDetail = new Product();
-//        for (Product p : apiService.getP()){
-//            String queryID = p.getId_P();
-//            String queryImage = p.getImage_P();
-//            String queryName = p.getName_P();
-//            float queryPrice = p.getPrice_P();
-//            int queryQuantity = p.getQuantity_P();
-//
-//            // Populate the ObservableList
-//            productObservableList.add(new Product(queryID, queryName, queryPrice, queryQuantity, queryImage));
-//        }
 
-//        DatabaseConnection connectNow = new DatabaseConnection();
-//        Connection connectionDB = connectNow.getConnection();
-//
-//        //SQL Query - Executed in the backed database
-//        String productViewQuery = "SELECT * FROM microchipapp.product";
-//
         try {
             for (Product p : apiService.getP()){
                 String queryID = p.getId_P();
@@ -183,22 +148,7 @@ public class ProductSearchController implements Initializable {
         }catch (IllegalArgumentException e){
             e.getStackTrace();
         }
-//        try {
-//            Statement statement = connectionDB.createStatement();
-//            ResultSet queryOutput = statement.executeQuery(productViewQuery);
-//
-//            while (queryOutput.next()) {
-//                String queryID = queryOutput.getString("id_P");
-//                String queryImage = queryOutput.getString("image_P");
-//                String queryName = queryOutput.getString("name_P");
-//                float queryPrice = queryOutput.getFloat("price_P");
-//                int queryQuantity = queryOutput.getInt("all_quantity_P");
-//
-//                // Populate the ObservableList
-//                productObservableList.add(new Product(queryID, queryName, queryPrice, queryQuantity, queryImage));
-//
-//
-//            }
+
 
             id_ProductTableColumn.setCellValueFactory(new PropertyValueFactory<>("id_P"));
             name_ProductTableColumn.setCellValueFactory(new PropertyValueFactory<>("name_P"));
@@ -239,80 +189,35 @@ public class ProductSearchController implements Initializable {
 
             //apply filtered and sorted data to the table view
             productTableView.setItems(sortedData);
-//
-//
-//        } catch (SQLException e) {
-//            Logger.getLogger(ProductSearchController.class.getName()).log(Level.SEVERE, null, e);
-//            e.printStackTrace();
-//        }
+
 
     }
-//
-//    //    public void decreaseQuantityOnAction(ActionEvent event) throws IOException {
-////        DatabaseConnection connectionNow = new DatabaseConnection();
-////        Connection connectDB = connectionNow.getConnection();
-////
-////        String idProduct = selectedProduct.getId_P();
-//////        String editQuantity =  editQuantity_Field.getText();
-////
-////        int n = Integer.parseInt(editQuantity_Field.getText());
-////        String i = String.valueOf(n - 1);
-////
-////        String updateField = "UPDATE microchip.product SET quantity_P = + '" + i + "' WHERE id_P = '" + idProduct + "'";
-////
-////        try {
-////            Statement statement = connectDB.createStatement();
-////            statement.executeUpdate(updateField);
-////            updateTable();
-////
-//////            Button b = (Button) event.getSource();
-//////            Stage stage = (Stage) b.getScene().getWindow();
-//////
-//////            FXMLLoader loader = new FXMLLoader(getClass().getResource("product-view.fxml"));
-//////            stage.setScene(new Scene(loader.load(), 1080, 600));
-//////            stage.setTitle("MicrochipStarApp!");
-//////            stage.show();
-////
-////
-////        } catch (Exception e) {
-////            e.printStackTrace();
-////            e.getCause();
-////        }
-////
-////
-////    }
+
     public void increaseQuantityButtonOnAction(ActionEvent event) throws IOException {
-//        DatabaseConnection connectionNow = new DatabaseConnection();
-//        Connection connectDB = connectionNow.getConnection();
-//        if (editQuantity_Field.getText().isEmpty()) {
-//            editWarning.setText("กรุณากรอกข้อมูลในช่องว่าง");
-//        } else {
-//            if(productDetail.isInt(editQuantity_Field.getText())) {
-//                if (Integer.parseInt(editQuantity_Field.getText()) > 0 ) {
-//                    String idProduct = selectedProduct.getId_P();
-//                    int n = Integer.parseInt(editQuantity_Field.getText()) + Integer.parseInt(quantityPro_Field.getText());
-//                    String i = String.valueOf(n);
-//                    String updateField = "UPDATE microchipapp.product SET all_quantity_P = + '" + i + "' WHERE id_P = '" + idProduct + "'";
-//                    try {
-//                        Statement statement = connectDB.createStatement();
-//                        statement.executeUpdate(updateField);
-//                        clearSelectedProduct();
-//                        updateTable();
-//                    } catch (Exception e) {
-//                        e.printStackTrace();
-//                        e.getCause();
-//                    }
-//                }
-//                else{editWarning.setText("กรุณากรอกข้อมูลให้ถูกต้อง");}
-//            }else {editWarning.setText("กรุณากรอกตัวเลขให้ถูกต้อง");
-//            }
-//        }
-//
-//
-//
-//
-//
-//
+
+        product = new Product();
+        product.setName_P(namePro_Field.getText());
+
+//        product.setQuantity_P(Integer.parseInt(quantityPro_Field.getText()));
+
+        for (Product p : apiService.getP()){
+//                Product stock = apiService.getProductByPName(p.getId_P());
+//                stock.increaseStock(p.getQuantity_P());
+//                System.out.println(stock.getQuantity_P());
+//                apiService.updateProduct(stock);
+            if (selectedProduct.getName_P().equals(p.getName_P())){
+                if (selectedProduct.getQuantity_P() >= 0){
+                    int q = p.getQuantity_P() + Integer.parseInt(editQuantity_Field.getText());
+                    p.setQuantity_P(q);
+                    apiService.updateProduct(p);
+                }
+            }
+
+        }
+        updateTable();
+
+
+
     }
     public void editQuantityButtonOnAction(ActionEvent event){
 //        DatabaseConnection connectionNow = new DatabaseConnection();
