@@ -252,19 +252,17 @@ public class POController implements Initializable {
             apiService.addPO(poModel);
 
             for (Product p : apiService.getP()){
-                Product stock = apiService.getProductByPName(p.getId_P());
-                stock.increaseStock(p.getQuantity_P());
-                System.out.println(stock.getQuantity_P());
+//                Product stock = apiService.getProductByPName(p.getId_P());
+//                stock.increaseStock(p.getQuantity_P());
+//                System.out.println(stock.getQuantity_P());
 //                apiService.updateProduct(stock);
-//                if (poModel.getPn_PO().equals(p.getName_P())){
-//                    if (poModel.getQuantity_PO() < p.getQuantity_P()){
-//                        int q = p.getQuantity_P() - poModel.getQuantity_PO();
-//                        System.out.println(q);
-//                        p.increaseStock(q);
-//                        System.out.println(p.getQuantity_P());
-////                        apiService.updateP(p);
-//                    }
-//                }
+                if (poModel.getPn_PO().equals(p.getName_P())){
+                    if (poModel.getQuantity_PO() < p.getQuantity_P()){
+                        int q = p.getQuantity_P() - poModel.getQuantity_PO();
+                        p.setQuantity_P(q);
+                        apiService.updateProduct(p);
+                    }
+                }
 
             }
 //            poService.buyProduce(poModel.getName_PO(), poModel.getPhone_PO(),poModel.getEmail_PO() ,poModel.getAddress_PO(),

@@ -2,10 +2,12 @@ package Condos.models;
 
 
 public class Employee {
+
     private int idM;
     private String nameM;
     private String usernameM;
     private String passwordM;
+
 
 
 
@@ -18,6 +20,12 @@ public class Employee {
 
     public Employee(String nameM, String usernameM, String passwordM) {
         this.nameM = nameM;
+        this.usernameM = usernameM;
+        this.passwordM = passwordM;
+    }
+
+    public Employee(int idM, String usernameM, String passwordM) {
+        this.idM = idM;
         this.usernameM = usernameM;
         this.passwordM = passwordM;
     }
