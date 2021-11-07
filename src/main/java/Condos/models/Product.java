@@ -7,11 +7,21 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class Product {
+    private int no_P;
     private String id_P;//8B01,8B02..,16B01,16B01
     private String name_P;
     private float price_P;
     private int quantity_P;
     private String image_P;
+
+    public Product(int no_P, String id_P, String name_P, float price_P, int quantity_P, String image_P) {
+        this.no_P = no_P;
+        this.id_P = id_P;
+        this.name_P = name_P;
+        this.price_P = price_P;
+        this.quantity_P = quantity_P;
+        this.image_P = image_P;
+    }
 
     public Product(){
 
@@ -22,6 +32,19 @@ public class Product {
         this.price_P = price_P;
         this.quantity_P = quantity_P;
         this.image_P = image_P;
+    }
+
+    public Product(int no_P, int quantity_P) {
+        this.no_P = no_P;
+        this.quantity_P = quantity_P;
+    }
+
+    public int getNo_P() {
+        return no_P;
+    }
+
+    public void setNo_P(int no_P) {
+        this.no_P = no_P;
     }
 
     public String getId_P() {

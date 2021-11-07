@@ -4,7 +4,7 @@ import Condos.models.Employee;
 import Condos.models.POModel;
 import Condos.models.Product;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -100,6 +100,24 @@ public class APIService {
 
     public void updateProduct(Product product){
         String url = "http://localhost:8091/Product";
-        restTemplate.put(url+"/"+ product.getName_P(), product, Product.class);
+        restTemplate.put(url+"/"+ product.getNo_P(), product, Product.class);
     }
+
+//    int empNo = 1;
+//    String url = "http://localhost:8091/Product/" + empNo;
+//
+//
+//
+//    Product updateInfo = new Product(empNo,1000);
+//
+//    HttpHeaders headers = new HttpHeaders();
+//        headers.add("Accept", MediaType.APPLICATION_JSON_VALUE);
+//
+//    RestTemplate restTemplate = new RestTemplate();
+//
+//    // Data attached to the request.
+//    HttpEntity<Product> requestBody = new HttpEntity<>(updateInfo, headers);
+//
+//    // Send request with PUT method.
+//        restTemplate.exchange(url, HttpMethod.PUT, requestBody, Void.class);
 }

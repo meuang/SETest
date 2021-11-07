@@ -15,6 +15,8 @@ public class ProductService {
     }
 
 
+
+
 //    public boolean checkProduct(int quantity_PO , String namePro){
 //        for (Product p : apiService.getP()){
 //            if (namePro.equals(p.getName_P())){

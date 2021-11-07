@@ -89,8 +89,8 @@ public class ProductSearchController implements Initializable {
         inQuantity_Button.setDisable(true);
         editQuantityButton.setDisable(true);
         addProduct_Button.setDisable(false);
-        clear_Button.setDisable(true);
-        addProduct_Button.setDisable(false);
+        clear_Button.setDisable(false);
+        addProduct_Button.setDisable(true);
         updateTable();
         handleUpload.setDisable(false);
 
@@ -212,33 +212,33 @@ public class ProductSearchController implements Initializable {
                 }
             });
 
-//            FilteredList<Product> filteredDate = new FilteredList<>(productObservableList, b -> true);
-//
-//            keywordTextField.textProperty().addListener((observable, oldValue, newValue) -> {
-//                filteredDate.setPredicate(product -> {
-//
-//                    if (newValue.isEmpty() || newValue.isBlank() || newValue == null) {
-//                        return true;
-//                    }
-//                    String searchKeyword = newValue.toLowerCase();
-//                    if (product.getId_P().toLowerCase().indexOf(searchKeyword) > -1) {
-//                        return true;//found a match in product
-//                    } else if (product.getName_P().toLowerCase().indexOf(searchKeyword) > -1) {
-//                        return true;
-//                    } else if (product.getImage_P().toLowerCase().indexOf(searchKeyword) > -1) {
-//                        return true;
-//                    } else
-//                        return false;//not found
-//
-//                });
-//            });
-//            SortedList<Product> sortedData = new SortedList<>(filteredDate);
-//
-//            //bind sorted result result with table view
-//            sortedData.comparatorProperty().bind(productTableView.comparatorProperty());
-//
-//            //apply filtered and sorted data to the table view
-//            productTableView.setItems(sortedData);
+            FilteredList<Product> filteredDate = new FilteredList<>(productObservableList, b -> true);
+
+            keywordTextField.textProperty().addListener((observable, oldValue, newValue) -> {
+                filteredDate.setPredicate(product -> {
+
+                    if (newValue.isEmpty() || newValue == null) {
+                        return true;
+                    }
+                    String searchKeyword = newValue.toLowerCase();
+                    if (product.getId_P().toLowerCase().indexOf(searchKeyword) > -1) {
+                        return true;//found a match in product
+                    } else if (product.getName_P().toLowerCase().indexOf(searchKeyword) > -1) {
+                        return true;
+                    } else if (product.getImage_P().toLowerCase().indexOf(searchKeyword) > -1) {
+                        return true;
+                    } else
+                        return false;//not found
+
+                });
+            });
+            SortedList<Product> sortedData = new SortedList<>(filteredDate);
+
+            //bind sorted result result with table view
+            sortedData.comparatorProperty().bind(productTableView.comparatorProperty());
+
+            //apply filtered and sorted data to the table view
+            productTableView.setItems(sortedData);
 //
 //
 //        } catch (SQLException e) {
