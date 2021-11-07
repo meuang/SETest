@@ -216,8 +216,6 @@ public class ProductSearchController implements Initializable {
         }
         updateTable();
 
-
-
     }
     public void editQuantityButtonOnAction(ActionEvent event){
 //        DatabaseConnection connectionNow = new DatabaseConnection();
