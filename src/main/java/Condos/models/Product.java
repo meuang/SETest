@@ -71,7 +71,13 @@ public class Product {
     }
 
 
-
+    public void decreaseStock(int quantity){
+        System.out.println("d 1");
+        if(quantity > 0 && quantity <= this.quantity_P){
+            this.quantity_P-=quantity;
+            System.out.println("d 2");
+        }
+    }
 
 
 }

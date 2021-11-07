@@ -90,7 +90,7 @@ public class ProductSearchController implements Initializable {
         editQuantityButton.setDisable(true);
         addProduct_Button.setDisable(false);
         clear_Button.setDisable(true);
-        addProduct_Button.setDisable(true);
+        addProduct_Button.setDisable(false);
         updateTable();
         handleUpload.setDisable(false);
 
