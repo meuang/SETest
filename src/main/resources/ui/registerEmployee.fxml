@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="650.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Condos.controller.registerEmployeeController">
+    <children>
+      <ImageView fitHeight="650.0" fitWidth="650.0" layoutX="-1.0">
+         <image>
+            <Image url="@1.jpg" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b9b9b9" height="151.0" layoutX="-15.0" layoutY="-54.0" stroke="BLACK" strokeType="INSIDE" width="664.0" />
+      <ImageView fitHeight="131.0" fitWidth="149.0" layoutX="-15.0" layoutY="-8.0">
+         <image>
+            <Image url="@LogoMicrochip_-_Copy-removebg-preview.png" />
+         </image>
+      </ImageView>
+        <Label layoutX="190.0" layoutY="23.0" prefHeight="45.0" prefWidth="255.0" text="Register Employee">
+            <font>
+                <Font size="30.0" />
+            </font>
+        </Label>
+        <TextField fx:id="name" layoutX="251.0" layoutY="175.0" promptText="name">
+         <effect>
+            <DropShadow color="#e4cccc" />
+         </effect></TextField>
+        <TextField fx:id="username" layoutX="251.0" layoutY="243.0" promptText="username">
+         <effect>
+            <DropShadow color="#e4cccc" />
+         </effect></TextField>
+        <PasswordField fx:id="password" layoutX="251.0" layoutY="313.0" promptText="password">
+         <effect>
+            <DropShadow color="#e4cccc" />
+         </effect></PasswordField>
+        <PasswordField fx:id="ConfirmPassword" layoutX="251.0" layoutY="382.0" promptText="Confirm Password">
+         <effect>
+            <DropShadow color="#e4cccc" />
+         </effect></PasswordField>
+        <Button fx:id="registerButton" layoutX="260.0" layoutY="450.0" mnemonicParsing="false" onAction="#registerButtonOnAction" prefHeight="31.0" prefWidth="132.0" style="-fx-background-color: #FFFFFF;" text="บันทึก">
+         <effect>
+            <DropShadow color="#e4cccc" />
+         </effect></Button>
+        <Button fx:id="closeButton" layoutX="591.0" layoutY="33.0" mnemonicParsing="false" onAction="#closeButtonAction" text="ปิด" />
+        <Label fx:id="error" layoutX="232.0" layoutY="503.0" prefHeight="21.0" prefWidth="167.0" textAlignment="CENTER" textFill="RED" />
+    </children>
+</AnchorPane>

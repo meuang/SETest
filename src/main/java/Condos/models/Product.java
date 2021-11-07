@@ -8,7 +8,7 @@ import java.sql.Statement;
 
 public class Product {
     private int no_P;
-    private String id_P;//8B01,8B02..,16B01,16B01
+    private String id_P;
     private String name_P;
     private float price_P;
     private int quantity_P;

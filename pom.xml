@@ -9,13 +9,13 @@
         <version>2.5.4</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>iceFactory</groupId>
-    <artifactId>IceFactoryApplication</artifactId>
+    <groupId>MicrochipsStarApp</groupId>
+    <artifactId>MicrochipsStarApp</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <out.folder>iceFactoryProjectUI</out.folder>
-        <out.filename>iceFactory</out.filename>
+        <out.folder>MicrochipsStarApp</out.folder>
+        <out.filename>MicrochipsStarApp</out.filename>
         <project.mainClass>iceFactory.IceFactoryApplication.Main</project.mainClass>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>

@@ -48,14 +48,6 @@ public class EmployeeService {
     public EmployeeList getDatazz() {
         employeeList = new EmployeeList();
         readData();
-//        try {
-//            employeeList = new EmployeeList();
-//            readData();
-//        } catch (FileNotFoundException e) {
-//
-//        } catch (IOException e) {
-//            System.err.println("IOException from reading " + this.fileName);
-//        }
         return employeeList;
     }
 

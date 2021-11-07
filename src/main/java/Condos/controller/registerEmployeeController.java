@@ -32,14 +32,14 @@ public class registerEmployeeController {
     private Employee employees;
     private EmployeeService employeeService;
     private APIService apiService;
-//    private user users;
+
 
     public void initialize(){
         employees = new Employee();
         employeeService =  new EmployeeService();
         ApplicationContext context = new AnnotationConfigApplicationContext(ComponentConfig.class);
         apiService = context.getBean(APIService.class);
-//        users = new user();
+
     }
 
     public void closeButtonAction(ActionEvent event){
@@ -56,13 +56,13 @@ public class registerEmployeeController {
             ConfirmPassword.clear();
         }else {
             if (password.getText().equals(ConfirmPassword.getText())){
-//                if (users.checkUsername(username.getText())){
+
                 if (employeeService.checkUsername(username.getText())){
                     employees.setNameM(name.getText());
                     employees.setUsernameM(username.getText());
                     employees.setPasswordM(password.getText());
                     apiService.addE(employees);
-//                    employees.registerEmployee(name.getText(),username.getText(),password.getText());
+
                     error.setText("บันทึกข้อมูลสำเร็จ");
                 }else {
                     error.setText("username นี้มีแล้ว");
@@ -71,13 +71,6 @@ public class registerEmployeeController {
                     password.clear();
                     ConfirmPassword.clear();
                 }
-//                }else {
-//                    error.setText("username นี้มีแล้ว");
-//                    name.clear();
-//                    username.clear();
-//                    password.clear();
-//                    ConfirmPassword.clear();
-//                }
 
             }else {
                 error.setText("password ไม่ตรงกัน");

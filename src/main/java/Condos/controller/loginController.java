@@ -43,11 +43,11 @@ public class loginController {
             Button b = (Button) event.getSource();
             Stage stage = (Stage) b.getScene().getWindow();
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/datasqltest/employee/homeEmployee.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/ui/employee/homeEmployee.fxml"));
             stage.setScene(new Scene(loader.load(),1080,680));
 
             stage.show();
-//            error.setText("มีอยู่จริง");
+
 
         }
         else {

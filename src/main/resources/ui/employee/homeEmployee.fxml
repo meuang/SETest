@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="680.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Condos.controller.homeEmployeeController">
+    <children>
+      <ImageView fitHeight="685.0" fitWidth="1085.0">
+         <image>
+            <Image url="@../1.jpg" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b9b9b9" height="87.0" layoutX="1.0" stroke="#757575" strokeDashOffset="10.0" strokeLineCap="BUTT" strokeLineJoin="BEVEL" strokeType="INSIDE" style="-fx-background-color: red;" width="1085.0" />
+      <ImageView fitHeight="143.0" fitWidth="175.0" layoutY="-17.0">
+         <image>
+            <Image url="@../LogoMicrochip_-_Copy-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fcfcfc" height="228.0" layoutX="32.0" layoutY="363.0" stroke="BLACK" strokeType="INSIDE" width="1023.0" />
+        <Label layoutX="44.0" layoutY="107.0" text="รายการสั่งซื้อ" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="34.0" />
+            </font>
+        </Label>
+        <Label fx:id="nameTestText" layoutX="116.0" layoutY="370.0" prefHeight="45.0" prefWidth="398.0" text="...">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+        <Label fx:id="addressTest" layoutX="353.0" layoutY="461.0" prefHeight="126.0" prefWidth="685.0" text="...">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+        <TextField fx:id="serach" layoutX="825.0" layoutY="114.0" prefHeight="31.0" prefWidth="200.0" />
+        <Label layoutX="768.0" layoutY="119.0" text="Serach" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Label>
+        <TableView fx:id="POTable" layoutX="30.0" layoutY="159.0" prefHeight="200.0" prefWidth="1023.0">
+            <columns>
+                <TableColumn fx:id="id_po" prefWidth="75.0" text="รายการที่" />
+                <TableColumn fx:id="name" prefWidth="75.0" text="ชื่อลูกค้า" />
+                <TableColumn fx:id="phone" prefWidth="71.0" text="เบอร์" />
+                <TableColumn fx:id="address" prefWidth="264.0" text="ที่อยู่" />
+                <TableColumn fx:id="pn" prefWidth="128.0" text="ชื่อสินค้า" />
+                <TableColumn fx:id="quantity" prefWidth="136.0" text="จำนวน" />
+                <TableColumn fx:id="tp" minWidth="0.0" prefWidth="68.0" text="ราคา" />
+                <TableColumn fx:id="date" prefWidth="91.0" text="วันที่" />
+                <TableColumn fx:id="status" prefWidth="97.0" text="สถานะ" />
+            </columns>
+        </TableView>
+        <ChoiceBox fx:id="choiceBoxState" layoutX="44.0" layoutY="553.0" prefWidth="150.0" />
+        <Button fx:id="confirmState" layoutX="205.0" layoutY="553.0" mnemonicParsing="false" text="ยืนยัน" />
+        <Label layoutX="34.0" layoutY="370.0" prefHeight="45.0" prefWidth="99.0" text="Name :">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+        </Label>
+        <Label layoutX="541.0" layoutY="379.0" text="Phone :">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+        </Label>
+        <Label fx:id="phoneText" layoutX="617.0" layoutY="370.0" prefHeight="45.0" prefWidth="392.0" text="...">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+        <Label layoutX="177.0" layoutY="500.0" text="Address :">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+        </Label>
+        <Label layoutX="542.0" layoutY="435.0" text="States :">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+        </Label>
+        <Label fx:id="statesText" layoutX="629.0" layoutY="426.0" prefHeight="45.0" prefWidth="392.0" text="...">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+        <Label layoutX="37.0" layoutY="435.0" text="Date :">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+        </Label>
+        <Label fx:id="dateText" layoutX="107.0" layoutY="426.0" prefHeight="45.0" prefWidth="417.0" text="...">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+        <Label fx:id="error" layoutX="35.0" layoutY="526.0" prefHeight="21.0" prefWidth="308.0" textFill="RED" />
+        <ToolBar layoutX="631.0" layoutY="21.0" prefHeight="45.0" prefWidth="424.0">
+            <items>
+                <Button mnemonicParsing="false" onAction="#goPOButton" prefWidth="93.0" text="ใบ PO" />
+                <Button mnemonicParsing="false" onAction="#addProductButtonOnAction" text="เพิ่มสินค้า" />
+                <Button fx:id="addEmployee" mnemonicParsing="false" onAction="#addEmployeeButtonOnAction" text="เพิ่มพนักงาน" />
+                <Button fx:id="logout" mnemonicParsing="false" onAction="#logOutButtonOnAction" text="ออกจากระบบ" />
+            </items>
+        </ToolBar>
+    </children>
+</AnchorPane>

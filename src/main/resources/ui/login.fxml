@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Condos.controller.loginController">
+    <children>
+      <ImageView fitHeight="591.0" fitWidth="800.0" layoutY="8.0">
+         <image>
+            <Image url="@1.jpg" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b9b9b9" height="88.0" stroke="#757575" strokeDashOffset="10.0" strokeLineCap="BUTT" strokeLineJoin="BEVEL" strokeType="INSIDE" style="-fx-background-color: red;" width="800.0" />
+      <Text layoutX="312.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sign-In" wrappingWidth="175.99999848008156">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="135.0" fitWidth="149.0">
+         <image>
+            <Image url="@LogoMicrochip_-_Copy-removebg-preview.png" />
+         </image>
+      </ImageView>
+        <PasswordField fx:id="password" layoutX="242.0" layoutY="269.0" prefHeight="31.0" prefWidth="318.0" promptText="password">
+         <effect>
+            <DropShadow color="#b59797" />
+         </effect></PasswordField>
+        <TextField fx:id="username" layoutX="242.0" layoutY="190.0" prefHeight="31.0" prefWidth="318.0" promptText="username">
+         <effect>
+            <DropShadow color="#a48a8a" />
+         </effect></TextField>
+      <Button fx:id="loginButton" layoutX="298.0" layoutY="359.0" mnemonicParsing="false" onAction="#loginButtonOnAction" prefHeight="31.0" prefWidth="206.0" style="-fx-background-color: #FFFFFF;" text="เข้าสู่ระบบ" />
+      <Label fx:id="error" layoutX="317.0" layoutY="322.0" prefHeight="21.0" prefWidth="166.0" textAlignment="CENTER" textFill="RED" />
+    </children>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+</AnchorPane>

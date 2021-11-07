@@ -13,7 +13,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
-//import th.ac.ku.MicrochipsStarApp.model.Customer;
+
 
 @Service
 public class APIService {
@@ -41,9 +41,9 @@ public class APIService {
         restTemplate.postForObject(url, cart, POModel.class);
     }
 
-    public void updatePO(POModel order){
+    public void updatePO(int id,POModel order){
         String url = "http://localhost:8091/PO";
-        restTemplate.put(url,order,POModel.class);
+        restTemplate.put(url + '/' + id,order,POModel.class);
     }
     //----------------------------------Employee---------------------------------------------------
     public List<Employee> getE() {
@@ -80,10 +80,7 @@ public class APIService {
         restTemplate.postForObject(url, cart, Product.class);
     }
 
-//    public void updateP(Product order){
-//        String url = "http://localhost:8091/Product";
-//        restTemplate.put(url,order,Product.class);
-//    }
+
 
 
     public void updateP(Product order) {
@@ -103,21 +100,4 @@ public class APIService {
         restTemplate.put(url+"/"+ product.getNo_P(), product, Product.class);
     }
 
-//    int empNo = 1;
-//    String url = "http://localhost:8091/Product/" + empNo;
-//
-//
-//
-//    Product updateInfo = new Product(empNo,1000);
-//
-//    HttpHeaders headers = new HttpHeaders();
-//        headers.add("Accept", MediaType.APPLICATION_JSON_VALUE);
-//
-//    RestTemplate restTemplate = new RestTemplate();
-//
-//    // Data attached to the request.
-//    HttpEntity<Product> requestBody = new HttpEntity<>(updateInfo, headers);
-//
-//    // Send request with PUT method.
-//        restTemplate.exchange(url, HttpMethod.PUT, requestBody, Void.class);
 }

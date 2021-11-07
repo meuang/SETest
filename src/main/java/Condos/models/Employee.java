@@ -66,11 +66,4 @@ public class Employee {
     }
 
 
-//    public boolean entryCheck(String username,String password){
-//        if(usernameM.equals(username)) {
-//            if(passwordM.equals(password)) return true;
-//            else throw new IllegalArgumentException("Wrong password.");
-//        }
-//        return false;
-//    }
 }

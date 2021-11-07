@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Condos.controller.loginController">
+   <children>
+      <ImageView fitHeight="600.0" fitWidth="800.0" layoutY="-1.0">
+         <image>
+            <Image url="@1.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="257.0" fitWidth="257.0" layoutX="272.0" layoutY="171.0">
+         <image>
+            <Image url="@MicroClick.png" />
+         </image>
+         <effect>
+            <DropShadow color="WHITE" height="71.41" radius="35.945" width="74.37" />
+         </effect>
+      </ImageView>
+      <ImageView fitHeight="37.0" fitWidth="673.0" layoutX="64.0" layoutY="99.0">
+         <image>
+            <Image url="@WelcomeToMicrochipStar.png" />
+         </image>
+      </ImageView>
+   </children>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+</AnchorPane>
